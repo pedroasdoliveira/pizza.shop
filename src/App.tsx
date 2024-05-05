@@ -1,11 +1,20 @@
-import './global.css';
+import { RouterProvider } from "react-router-dom";
+import "./global.css";
+import { router } from "./routes";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Toaster } from "sonner";
+import { ThemeProvider } from "./components/theme/theme-provider";
 
 function App() {
   return (
-    <div className='flex justify-center items-center h-screen'>
-            
-    </div>
-  )
+    <HelmetProvider>
+      <ThemeProvider storageKey="pizzashop-theme" defaultTheme="dark">
+        <Helmet titleTemplate="%s | pizza.shop" />
+        <Toaster richColors />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </HelmetProvider>
+  );
 }
 
-export default App
+export default App;
