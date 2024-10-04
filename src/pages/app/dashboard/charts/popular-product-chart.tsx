@@ -8,9 +8,10 @@ import {
 import colors from "tailwindcss/colors";
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Cell } from "recharts";
 import { data, productData } from "./data-mock";
-import { BarChart } from "lucide-react";
+import { BarChart, Loader2 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { getPopularProducts } from "@/api/metrics/get-popular-products";
+import SpinLoader from "../loadings/spin-loader";
 
 const COLORS = [
   colors.sky[500],
@@ -37,7 +38,7 @@ const PopularProductChart = () => {
         </div>
       </CardHeader>
       <CardContent>
-        {popularProducts && (
+        {popularProducts ? (
           <ResponsiveContainer width={"100%"} height={248}>
             <PieChart style={{ fontSize: 12 }}>
               <Pie
@@ -94,6 +95,8 @@ const PopularProductChart = () => {
               </Pie>
             </PieChart>
           </ResponsiveContainer>
+        ) : (
+          <SpinLoader />
         )}
       </CardContent>
     </Card>

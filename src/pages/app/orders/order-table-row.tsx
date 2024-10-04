@@ -144,6 +144,7 @@ const OrderTableRow = ({ order }: IOrderTableRowProps) => {
           <OrderDetails orderId={order.orderId} open={isDetailsOpen} />
         </Dialog>
       </TableCell>
+
       <TableCell className="font-mono text-xs font-medium">
         {order.orderId}
       </TableCell>
@@ -153,10 +154,13 @@ const OrderTableRow = ({ order }: IOrderTableRowProps) => {
           addSuffix: true,
         })}
       </TableCell>
+
       <TableCell>
         <OrderStatus status={order.status} />
       </TableCell>
+
       <TableCell className="font-medium">{order.customerName}</TableCell>
+
       <TableCell className="font-medium">
         {(order.total / 100).toLocaleString("pt-BR", {
           style: "currency",
