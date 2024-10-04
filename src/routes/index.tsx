@@ -5,6 +5,7 @@ import Dashboard from "@/pages/app/dashboard/Dashboard";
 import Orders from "@/pages/app/orders/orders";
 import SignIn from "@/pages/auth/SignIn";
 import SignUp from "@/pages/auth/SignUp";
+import ErrorPage from "@/pages/error";
 import { createBrowserRouter } from "react-router-dom";
 
 export enum Paths {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <NotFoundPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -42,5 +43,9 @@ export const router = createBrowserRouter([
         element: <SignUp />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
