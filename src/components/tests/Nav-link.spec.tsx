@@ -19,7 +19,7 @@ describe("Nav link component", () => {
       },
     );
 
-    debug();
+    // debug();
 
     expect(getByText("Home").dataset.current).toEqual("false");
     expect(getByText("About").dataset.current).toEqual("true");
