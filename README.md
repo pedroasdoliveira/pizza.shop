@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Restaurant Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de desenvolvimento construído acompanhando a formação React da Rocketseat.
 
-Currently, two official plugins are available:
+Trata-se de uma sistema de gerenciamentos e cadastros de restaurantes, podendo de uma forma simples visualizar sobre as métricas, através de um Dashboard, sobre o status de seu restaurante e na aba de pedidos sobre os pedidos com os diferentes status feitos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Configurações
 
-## Expanding the ESLint configuration
+### Rodar em ambiente de Desenvolvimento
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`pnpm run dev`
 
-- Configure the top-level `parserOptions` property like this:
+### Rodar em ambiente de teste/mock
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+`pnpm run dev:test`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tecnologias Usadas
+
+- pnpm
+- typescript
+- react
+- tailwindcss
+- vite
+- vitest
+- msw
+- shadcn-ui
+- radix-ui
+- zod
+- recharts
+- sonner
+- date-fns
+- tanstack/react-query
