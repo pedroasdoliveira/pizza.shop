@@ -9,6 +9,9 @@ import { getMonthCanceledOrdersAmountMock } from "./metrics/get-month-canceled-o
 import { getMonthRevenueMock } from "./metrics/get-month-revenue-mock";
 import { getDailyRevenueInPeriodMock } from "./metrics/get-daily-revenue-in-period-mock";
 import { getPopularProductsMock } from "./metrics/get-popular-products-mock";
+import { getProfileMock } from "./get-profile-mock";
+import { getManagedRestaurantMock } from "./get-managed-restaurant-mock";
+import { updateProfileMock } from "./update-profile-mock";
 
 export const worker = setupWorker(
   signInMock,
@@ -19,6 +22,9 @@ export const worker = setupWorker(
   getMonthRevenueMock,
   getDailyRevenueInPeriodMock,
   getPopularProductsMock,
+  getProfileMock,
+  getManagedRestaurantMock,
+  updateProfileMock,
 );
 
 export const enableMsw = async () => {

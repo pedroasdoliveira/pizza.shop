@@ -21,6 +21,8 @@ const AppLayout = () => {
           // verificar se o error é referente ao usuário está deslogado na aplicação
           if (status === 401 && code === "UNAUTHORIZED") {
             navigate(Paths.SIGN_IN, { replace: true });
+          } else {
+            throw error;
           }
         }
       },
