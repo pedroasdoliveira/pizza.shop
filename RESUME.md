@@ -12,3 +12,10 @@
 New Version:
 
 `pnpm dlx shadcn@latest add <component>`
+
+- Running playwright for tests e2e:
+
+`pnpm playwright test`
+
+Open UI
+`pnpm playwright test --ui`
