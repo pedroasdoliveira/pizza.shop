@@ -16,8 +16,6 @@ test("List orders", async ({ page }) => {
   expect(
     page.getByRole("cell", { name: "Customer 10", exact: true }),
   ).toBeVisible();
-
-  await page.waitForTimeout(500);
 });
 
 test("Paginate orders", async ({ page }) => {
@@ -69,8 +67,6 @@ test("Paginate orders", async ({ page }) => {
   expect(
     page.getByRole("cell", { name: "Customer 10", exact: true }),
   ).toBeVisible();
-
-  await page.waitForTimeout(500);
 });
 
 test("Filter by order id", async ({ page }) => {
@@ -81,8 +77,6 @@ test("Filter by order id", async ({ page }) => {
   await page.getByRole("button", { name: "Filtrar resultados" }).click();
 
   expect(page.getByRole("cell", { name: "order-11" })).toBeVisible();
-
-  await page.waitForTimeout(260);
 });
 
 test("Filter by customer name", async ({ page }) => {
@@ -93,8 +87,6 @@ test("Filter by customer name", async ({ page }) => {
   await page.getByRole("button", { name: "Filtrar resultados" }).click();
 
   expect(page.getByRole("cell", { name: "Customer 20" })).toBeVisible();
-
-  await page.waitForTimeout(260);
 });
 
 test("Filter by status", async ({ page }) => {
@@ -111,6 +103,4 @@ test("Filter by status", async ({ page }) => {
   const tableRows = await page.getByRole("cell", { name: "Pendente" }).all();
 
   expect(tableRows).toHaveLength(10);
-
-  await page.waitForTimeout(260);
 });
