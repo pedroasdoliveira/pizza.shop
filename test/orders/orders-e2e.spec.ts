@@ -100,7 +100,7 @@ test("Filter by status", async ({ page }) => {
   expect(page.locator("td:nth-child(4)").first()).toBeVisible();
 
   // Buscar todas as células com a regra (role) descrita
-  const tableRows = await page.getByRole("cell", { name: "Pendente" }).all();
+  const tableRows = page.getByRole("cell", { name: "Pendente" });
 
-  expect(tableRows).toHaveLength(10);
+  await expect(tableRows).toHaveCount(10);
 });
